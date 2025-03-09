@@ -70,6 +70,20 @@ Get localhost:8080/todos
   }
 ]
 ```
+- findById
+```
+Get localhost:8080/todos/2
+
+[
+  {
+    "descricao": "Desc Todo 2",
+    "id": 1,
+    "nome": "Todo 2",
+    "prioridade": 1,
+    "realizado": false
+  }
+]
+```
 
 - Atualizar Tarefa
 ```

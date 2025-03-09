@@ -33,6 +33,10 @@ public class TodoController {
     List<Todo> list(){
         return todoService.list();
     }
+    @GetMapping("/{id}")
+    Todo findById(@PathVariable("id") Long id){
+        return todoService.findById(id);
+    }
     @PutMapping
     List<Todo> update(@RequestBody Todo todo){
         return todoService.update(todo);

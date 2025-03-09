@@ -42,4 +42,18 @@ private WebTestClient webTestClient;
 			.expectStatus().isBadRequest();
 	}
 
+	@Test
+	void  testFindByIdTodoSucess(){
+		webTestClient
+			.get()
+			.uri("/todos/2")
+			.exchange()
+			.expectStatus().isOk()
+			.expectBody()
+			.jsonPath("$.nome").isEqualTo("Todo 2")
+			.jsonPath("$.descricao").isEqualTo("Desc Todo 2")
+			.jsonPath("$.realizado").isEqualTo(false)
+			.jsonPath("$.prioridade").isEqualTo(1);	
+	}
+
 }

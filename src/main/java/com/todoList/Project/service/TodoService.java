@@ -26,6 +26,9 @@ public class TodoService {
         );
        return todoRepository.findAll(sort);
     }
+    public Todo findById(Long id){
+        return todoRepository.findById(id).get();
+    }
     public List<Todo> update(Todo todo){
         todoRepository.save(todo);
         return list();

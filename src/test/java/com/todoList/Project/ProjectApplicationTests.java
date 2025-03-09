@@ -25,7 +25,6 @@ private WebTestClient webTestClient;
 			.expectStatus().isOk()
 			.expectBody()
 			.jsonPath("$").isArray()
-			.jsonPath("$.length()").isEqualTo(	7)// toda vez que roda o teste incrementa a lista
 			.jsonPath("$[0].nome").isEqualTo(todo.getNome())
 			.jsonPath("$[0].descricao").isEqualTo(todo.getDescricao())
 			.jsonPath("$[0].realizado").isEqualTo(todo.isRealizado())
